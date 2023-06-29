@@ -1,0 +1,6 @@
+@import url('navbar.css');
+.container-pricipal{
+    background-color: var(--fundo-primario);
+    color: var(--fonte-cor-secundaria);
+    padding-top: 1em;
+}

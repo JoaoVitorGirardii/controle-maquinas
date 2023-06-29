@@ -1,0 +1,57 @@
+/* @import url('padrao.css'); */
+
+
+body{
+    display: flex;
+    align-items: center;
+    
+}
+
+.centraliza-card{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+}
+ 
+.card-login{
+    width: 35em;
+    box-shadow: 5px 5px 0px 0px #29292e, 10px 10px 0px 0px #29292ec7, 15px 15px 0px 0px #29292e52, 20px 20px 0px 0px #29292e41, 25px 25px 0px 0px #29292e42, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-color:  #626262;
+}
+
+.card-body{
+    color: white;
+    background-color: #29292e;
+    border-radius: inherit;
+}
+
+.form-text{
+    color: white;
+}
+
+.btn-confirmar{
+    background-color: inherit;
+    border-color: grey;
+    color: white;
+    font-weight: bolder;
+}
+
+.btn-confirmar:hover, .btn-confirmar:focus-visible{
+    border-color: var(--fonte-cor-primaria);
+    color: var(--fonte-cor-primaria);
+    
+}
+
+.form-control, .form-control:past{
+    background-color: #121214 !important;
+    color: white;
+    border-color: grey;
+}
+
+.form-control:focus{
+    color: white;
+    background-color: inherit;
+    border-color: var(--fonte-cor-primaria);
+    box-shadow: none;
+}

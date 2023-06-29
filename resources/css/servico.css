@@ -1,0 +1,53 @@
+@import url('navbar.css');
+
+.accordion-item-personalizado{
+    color: var(--fonte-cor-secundaria);
+    background-color: var(--fundo-secundario);
+    border: solid 1px grey;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+.accordion-header-personalizado{
+    margin: 0;
+    background-color: var(--fundo-secundario);
+    color: var(--fonte-cor-primaria);
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+
+/* nome vindo diretamente do Bootstrap */
+.accordion{
+    --bs-accordion-bg: none;
+    --bs-accordion-btn-color: none;
+    --bs-accordion-border-radius: 1em;
+    --bs-accordion-btn-icon: none;
+    --bs-accordion-btn-active-icon: none;
+}
+
+/* nome vindo diretamente do Bootstrap */
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+/* nome vindo diretamente do Bootstrap */
+.accordion-button:not(.collapsed){
+    background-color: var(--fundo-secundario) !important;
+    color: var(--fonte-cor-primaria);
+    border-bottom: solid 1px goldenrod;
+    border-radius: 0.5em;
+}
+
+/* nome vindo diretamente do Bootstrap */
+.accordion-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-button::after{
+    content: none;
+}

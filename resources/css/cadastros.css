@@ -1,0 +1,103 @@
+@import url('navbar.css');
+
+.card-body, .card-header{
+    color: white;
+    background-color: #29292e;
+}
+
+.card-body{
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
+.card-header{
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: solid 1px #626262;
+}
+
+.centraliza-vertical{
+    display: flex;
+    align-items: center; 
+}
+
+.centraliza-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-cadastro-usuario{
+    width: 60em;
+    border: solid 1px #626262;
+    box-shadow: rgb(143, 143, 143, 0.5) 0px 4px 16px;
+}
+
+.div-msg-erro{
+    margin-top: 0 !important;
+    visibility: hidden;
+    color: red;
+}
+
+.input-contato{
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: inherit;
+    color: var(--fonte-cor-secundaria);
+    border: none;
+    border-radius: none !important;
+    border-bottom: solid 1px grey;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.input-contato:focus-visible {
+    outline: none;
+    border-bottom: solid 2px rgb(190, 190, 190);
+}
+
+.form-select-contato{
+    
+    display: block;
+    width: 100%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: none;
+    border-radius: none !important;
+    border-bottom: solid 1px grey;
+    background-color: inherit;
+    color: var(--fonte-cor-secundaria);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    appearance: none;
+}
+
+.form-select-contato > option {
+    color: black;
+    cursor: pointer !important;
+}
+
+.form-select-contato:focus-visible {
+    outline: none;
+    border-bottom: solid 2px rgb(190, 190, 190);
+}
+
+.input-cadastro{
+    color: black;
+    font-weight: 700;
+}
+
+.aterisco-text{
+    color: red;
+    font-weight: 700;
+}
+
+.msg-asterisco{
+    color: red;
+    font-size: 0.8em;
+    padding-top: 1em;
+    text-align: start;
+}

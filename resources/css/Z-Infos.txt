@@ -1,0 +1,5 @@
+Importante ao cadastrar uma nova folha de css
+
+1- Importar o navbar.css 
+2- Adicionar o arquivo na view atravez do vite
+3- Adicionar a folha de estilo criarda no vite pelo caminho -> vite.config.js // fica na raiz do projeto

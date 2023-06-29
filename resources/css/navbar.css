@@ -1,0 +1,86 @@
+.container-navbar-padrao{
+    justify-content: normal !important;
+}
+
+.navbar-padrao{
+    height: 4em;
+}
+
+.btn-configuracao, .btn-opcoes-navbar, .btn-usuario{
+    background-color: inherit;
+    border: none;
+    padding: 6px 6px;
+}
+
+.btn-configuracao, .btn-usuario{
+    color: var(--fonte-cor-secundaria);
+}
+
+.btn-opcoes-navbar{
+    color: var(--fonte-cor-primaria);
+}
+
+.icone-configuracoes {
+    vertical-align: text-bottom;
+}
+ 
+.navbar-titulo{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.alinhamento-opcoes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-link-navbar{
+    text-decoration: none;
+    color: var(--fonte-cor-primaria);
+}
+
+.nav-link-usuario-navbar{
+    text-decoration: none;
+    color: var(--fonte-cor-secundaria);
+}
+
+.alinhamento-usuario-logado{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.ul-dropdown-navbar{
+    background-color: var(--fundo-secundario);
+}
+
+.a-dropdown-navbar{
+    color: var(--fonte-cor-secundaria);
+}
+
+.a-dropdown-navbar:hover{
+    background-color: var(--fundo-primario);
+    color: var(--fonte-cor-primaria);
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+.disabled-link-navbar{
+    color: rgb(93 93 93);
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.nome-usuario{
+    display: flex;
+    margin: 0;
+}
+
+.dropdown-item.disabled{
+    color: grey;
+}
+
+.img-nova{
+    width: 8em;
+    height: auto;
+}
