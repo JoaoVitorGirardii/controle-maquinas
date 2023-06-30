@@ -6,10 +6,9 @@ além de um simples crude que era o proposto.
 50% do que tem nesse projeto foi o que foi visto em sala, os outros 50% foi atráves de pesquisas, e leitura da documentação do laravel.
 
 BANCO DE DADOS: Postgres;
-
 FREMEWORK: Laravel;
 
-Executando o projeto:
+### Executando o projeto:
     * Baixar o projeto do git;
     * Abrir ele no vscode;
     * Abrir o terminal do vscode e executar os seguinte comandos em dois terminais diferentes.
