@@ -14,9 +14,9 @@ class DeleteController extends Controller
 
         if ($request->_method === "DELETE"){
             if (auth()->user()->id != $request->id ){
-                //delete para quando for tabela de usuario
-                
+                //caso precise deletar mais de uma tabela quando for deletar um usuario por exemplo deletar usando trigger.
                 $delete = DB::table($tabela)->where('id','=', $request->id)->delete();
+                
             }else{
                 return back()->with('isError', 'Erro não é possível deletar o usuário!!');
             }

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException as Validation;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CadastroController extends Controller
 {
@@ -59,7 +60,7 @@ class CadastroController extends Controller
                 $user->rg = str_replace(['.'],'',$request->rg);
                 $user->data_nascimento = str_replace(['/'],'-',$request->data_nascimento);
                 $user->sexo = $request->sexo;
-                //$user->endereco_id = 1; //adicionar cadastro de endereco dps pro que tiver funcionando as tabelas de endereços
+                //$user->endereco_id = 1; //adicionar cadastro de endereco dps que tiver funcionando as tabelas de endereços
                 $user->redefine_senha = true;
                 $user->password = Hash::make('0000'); //0000 por padrão no primeiro login o usuario vai ter q alterar
 
@@ -103,7 +104,16 @@ class CadastroController extends Controller
             });
             
         }catch(\Throwable $th){
-            return redirect()->back()->withInput()->with('erroNaGravacao', True);
+            if (stripos($th->getMessage(), 'duplicate key')){
+                
+                if (stripos($th->getMessage(), 'tbusuarios_cpf_unique')){
+                    return redirect()->back()->withInput()->with('erroNaGravacao', 'CPF já cadastrado.');
+                }else{
+                    return redirect()->back()->withInput()->with('erroNaGravacao', True);
+                }
+            }else{
+                return redirect()->back()->withInput()->with('erroNaGravacao', True);
+            }
         }
 
 
@@ -132,28 +142,50 @@ class CadastroController extends Controller
             $request->validate([
                 'nome'              => 'required',
                 'marca_id'          => 'required',
-                'peso'              => 'required',
-                'potencia'          => 'required',
-                'capacidade_tanque' => 'required'
+                'valor_compra'      => 'nullable|string|numeric',
+                'capacidade_carga'  => 'nullable|string|numeric',
+                'peso'              => 'required|string|numeric',
+                'potencia'          => 'required|string|numeric',
+                'capacidade_tanque' => 'required|string|numeric'
             ]);
         }catch(Validation $ex){ // valor que vai retornar para view caso falte preencher algum campo
-            return back()->withInput()->with('camposNaoPreenchidos', True);
+            if ( stripos($ex->getMessage(),'field must be a number.')){
+                if (stripos($ex->getMessage(),'peso')){
+                    return back()->withInput()->with('erroNaGravacao', 'Campo peso só pode conter números.');
+                }elseif (stripos($ex->getMessage(),'potencia')) {
+                    return back()->withInput()->with('erroNaGravacao', 'Campo potência só pode conter números.');
+                }elseif (stripos($ex->getMessage(),'capacidade tanque')) {
+                    return back()->withInput()->with('erroNaGravacao', 'Campo capacidade do tanque só pode conter números.');
+                }elseif (stripos($ex->getMessage(),'valor compra')) {
+                    return back()->withInput()->with('erroNaGravacao', 'Campo Valor de aquisição só pode conter números.');
+                }elseif (stripos($ex->getMessage(),'capacidade carga')) {
+                    return back()->withInput()->with('erroNaGravacao', 'Campo capacidade de carga só pode conter números.');
+                }
+            }else{
+                return back()->withInput()->with('camposNaoPreenchidos', True);
+            }
         }
 
-        $maquina = new TbMaquina;
-        $maquina->nome = $request->nome;
-        $maquina->marca_id = $request->marca_id; 
-        $maquina->peso = $request->peso;
-        $maquina->potencia = $request->potencia;
-        $maquina->capacidade_tanque = $request->capacidade_tanque;
-        $maquina->capacidade = $request->capacidade_carga;
-        $maquina->data_fabricacao = $request->data_fabricacao;
-        $maquina->data_aquisicao = $request->data_aquisicao;
-        $maquina->valor_compra = $request->valor_compra;
-        
-        if ($maquina->save()){ //retorna para view com sucesso
-            return redirect('cadastro/maquina')->with('cadastroRealizado', True);
-        }else{ //retorna para a view com erro
+        try{
+            $maquina = new TbMaquina;
+            $maquina->nome = $request->nome;
+            $maquina->marca_id = $request->marca_id; 
+            $maquina->peso = $request->peso;
+            $maquina->potencia = $request->potencia;
+            $maquina->capacidade_tanque = $request->capacidade_tanque;
+            $maquina->capacidade = $request->capacidade_carga;
+            $maquina->data_fabricacao = $request->data_fabricacao;
+            $maquina->data_aquisicao = $request->data_aquisicao;
+            $maquina->valor_compra = $request->valor_compra;
+            
+            if ($maquina->save()){ //retorna para view com sucesso
+                return redirect('cadastro/maquina')->with('cadastroRealizado', True);
+            }else{ //retorna para a view com erro
+                return back()->withInput()->with('erroNaGravacao', True);
+            }
+
+        }catch(\Throwable $th){
+            //tratar os campos para quando for digitado um texto em um campo numero dar erro
             return back()->withInput()->with('erroNaGravacao', True);
         }
     }

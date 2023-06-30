@@ -10,8 +10,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // cria a função que a trigger vai executar
+        // caso tenha mais tabelas futuramente usando o id do usuario como FK, será necessário adicionar ela aqui para remover, através da trigger.
         DB::unprepared("
-        --cria a função que a trigger vai executar
         CREATE OR REPLACE FUNCTION public.delete_privilegio_usuario()
             RETURNS trigger
             LANGUAGE 'plpgsql'
@@ -20,6 +21,7 @@ return new class extends Migration
         AS $$
         BEGIN
             DELETE FROM tbprivilegios_usuarios WHERE usuario_id = OLD.id;
+            DELETE FROM tbcontato WHERE usuario_id = OLD.id;
             RETURN OLD;
         END;
         $$;
@@ -28,8 +30,8 @@ return new class extends Migration
             OWNER TO postgres;
         ");
 
+        //cria a trigger
         DB::unprepared("
-        --cria a trigger
         CREATE TRIGGER trigger_delete_privilegio_usuario
         BEFORE DELETE
         ON public.tbusuarios

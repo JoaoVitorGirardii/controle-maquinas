@@ -7,3 +7,5 @@ além de um simples crude que era o proposto.
 
     > BANCO DE DADOS: Postgres
     > FREMEWORK: Laravel
+
+Obs: Imagino que a forma que montei a estrutura talvez não seja a melhor, mas dei meu melhor para evitar o maxímo de duplicidade de codigo e deixar o codigo mais limpo possível.

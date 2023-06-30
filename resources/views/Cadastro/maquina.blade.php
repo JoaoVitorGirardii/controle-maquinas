@@ -21,7 +21,7 @@
                 @endif
                 
                 @if (session('erroNaGravacao'))
-                    @include('layouts.msg',['tipoMsg' => 'danger-insert'])
+                    @include('layouts.msg',['tipoMsg' => 'danger-insert', 'msg' => 'Erro ao cadastrar máquina "'. session('erroNaGravacao')."\""])
                 @endif
     
                 @if (session('cadastroRealizado'))
