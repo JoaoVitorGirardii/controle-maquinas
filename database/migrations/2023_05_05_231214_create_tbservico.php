@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('descricao', 255);
             $table->string('tipo', 255);
-            $table->string('status_id', 255);
+            $table->bigInteger('status_id');
             $table->string('cliente',255);
             $table->string('local_servico',255); //quero fazer para cadastrar como o cep da rua mas vou primeiro momento vai ser assim mesmo
             $table->integer('numero')->nullable();
