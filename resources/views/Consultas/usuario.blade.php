@@ -13,7 +13,7 @@
     @include('layouts.navbar')
 
     <div class="container mt-5">
-        <div class="d-flex justify-content-center align-items-center text-center"> 
+        <div class="d-flex justify-content-center align-items-center text-center flex-column"> 
             
             @if (session('isSuccess'))
                 @include('layouts.msg',['tipoMsg' => 'success-delete-edit', 'msg' => session('isSuccess')])

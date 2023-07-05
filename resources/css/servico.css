@@ -48,6 +48,51 @@
     justify-content: space-between;
 }
 
+/* nome vindo diretamente do Bootstrap */
 .accordion-button::after{
     content: none;
+}
+
+.titulo-servico{
+    color: var(--fonte-cor-secundaria);
+}
+
+.status-servico-Cadastrado{
+    margin-top: 0.5em;
+    color: orange;
+}
+
+.status-servico-Iniciado{
+    margin-top: 0.5em;
+    color: greenyellow;
+}
+
+.status-servico-Finalizado{
+    margin-top: 0.5em;
+    color: gold;
+}
+
+.status-servico-Parado{
+    margin-top: 0.5em;
+    color: red;
+}
+
+.input-status-servico{
+    background-color: var(--fundo-secundario);
+    color: var(--fonte-cor-secundaria);
+    width: 10em;
+}
+
+.div-selecionar-status{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.form-selecionar-status{
+    display: flex;
+}
+
+.span-info{
+    font-weight: 900;
 }

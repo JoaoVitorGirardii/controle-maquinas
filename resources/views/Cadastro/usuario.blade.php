@@ -14,7 +14,7 @@
     <div class="centraliza-vertical mt-5">
         <div class="container centraliza-card">
 
-            <div class="d-flex justify-content-center align-items-center text-center">
+            <div class="d-flex justify-content-center align-items-center text-center flex-column">
                 @if (session('camposNaoPreenchidos'))
                     @include('layouts.msg',['tipoMsg' => 'warning-insert', 'msg' => 'Existe campos obrigatorios não preenchidos!'])
                 @endif

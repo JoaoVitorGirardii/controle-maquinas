@@ -35,8 +35,9 @@
                             </ul>
                         </div>
                     </div>
-                    {{-- <a class="navbar-brand navbar-titulo" href="{{ url('/home') }}">MaqControl</a> --}}
-                    <img class="img-nova" src="{{ asset('img/img_com_texto_sem_fundo.png') }}" alt="Minha Imagem">
+                    <a class="navbar-brand navbar-titulo" href="{{ url('/home') }}">
+                        <img class="img-nova" src="{{ asset('img/img_com_texto_sem_fundo.png') }}" alt="MaqControl">
+                    </a>
                 </div>
                 {{-- menu lateral Fim --}}
             @else
@@ -44,8 +45,9 @@
                     {{-- só exite pq não é a página home --}}
                 </div>
                 <div class="col-2">
-                    {{-- <a class="navbar-brand navbar-titulo" href="{{ url('/home') }}">MaqControl</a> --}}
-                    <img class="img-nova" src="{{ asset('img/img_com_texto_sem_fundo.png') }}" alt="Minha Imagem">
+                    <a class="navbar-brand navbar-titulo" href="{{ url('/home') }}">
+                        <img class="img-nova" src="{{ asset('img/img_com_texto_sem_fundo.png') }}" alt="MaqControl">
+                    </a>
                 </div>
             @endif
 
@@ -76,7 +78,7 @@
                 </ul>
             </div>   
 
-            <a href="{{ url('/servicos') }}" class="nav-link-navbar">Serviços</a>
+            <a href="{{ url('/consulta/servico') }}" class="nav-link-navbar">Serviços</a>
             <a href="#" class="nav-link-navbar">Manutenções</a>   
             <a href="#" class="nav-link-navbar">Relatórios</a>
         </div>

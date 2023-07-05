@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TbMaquina;
+use App\Models\TbServico;
 use App\Models\Tbusuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -49,6 +50,13 @@ class EditarController extends Controller
                 $result = $maquina->UpdateMaquina($id,$dadosAjustados) == 1;
                 break;
                 
+            case 'tbservico':
+                
+                $servico = new TbServico;
+                if ($request->status_id !== null) {
+                    $servico->where('id', '=', $id)->update(['status_id' => $request->status_id]);   
+                }
+
             default:
                 // defaul momentaneamente
                 break;

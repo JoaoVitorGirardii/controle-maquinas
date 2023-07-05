@@ -14,7 +14,7 @@
     <div class="centraliza-vertical mt-5">
         <div class="container centraliza-card">
             
-            <div class="d-flex justify-content-center align-items-center text-center">
+            <div class="d-flex justify-content-center align-items-center text-center flex-column">
                 
                 @if (session('camposNaoPreenchidos'))
                     @include('layouts.msg',['tipoMsg' => 'warning-insert'])
@@ -26,6 +26,14 @@
     
                 @if (session('cadastroRealizado'))
                     @include('layouts.msg',['tipoMsg' => 'success-insert'])
+                @endif
+
+                @if ($maquinas->isEmpty())
+                    @include('layouts.msg',['tipoMsg' => 'warning-insert', 'msg' => 'Nenhuma máquina cadastrada no sistema!'])
+                @endif
+
+                @if ($funcionarios->isEmpty())
+                    @include('layouts.msg',['tipoMsg' => 'warning-insert', 'msg' => 'Nenhuma funcionário cadastrada no sistema!'])
                 @endif
 
             </div>

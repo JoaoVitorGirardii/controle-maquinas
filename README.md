@@ -1,4 +1,4 @@
-## LARAVEL V10.8
+## LARAVEL V10.9
 
 Projeto todo ultilizando o framework laravel, iniciado na faculdade apenas como um trabalho mas como gostei da framework, cabei fazendo coisas a mais
 além de um simples crude que era o proposto.
@@ -8,4 +8,4 @@ além de um simples crude que era o proposto.
     > BANCO DE DADOS: Postgres
     > FREMEWORK: Laravel
 
-Obs: Imagino que a forma que montei a estrutura talvez não seja a melhor, mas dei meu melhor para evitar o maxímo de duplicidade de codigo e deixar o codigo mais limpo possível.
+Obs: Imagino que a forma que montei a estrutura talvez não seja a melhor, e nem a responsividade(não foquei nisso), mas dei meu melhor para evitar o maxímo de duplicidade de código e deixalo o mais compreensivel possível.

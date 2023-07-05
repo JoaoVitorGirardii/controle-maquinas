@@ -227,7 +227,7 @@ class CadastroController extends Controller
         $servico = new TbServico;
         $servico->descricao = $request->descricao;
         $servico->tipo = $request->tipo_servico;
-        $servico->status = 1; //1 cadastrado 2 iniciado 3 finalizado
+        $servico->status_id = 1; //1 cadastrado 2 iniciado 3 finalizado 4 parado
         $servico->cliente = $request->cliente;
         $servico->local_servico = $request->endereco;
         $servico->numero = $request->numero;

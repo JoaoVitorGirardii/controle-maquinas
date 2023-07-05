@@ -7,7 +7,6 @@ use App\Http\controllers\DeleteController;
 use App\Http\controllers\EditarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ServicoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,10 +56,12 @@ Route::middleware('padrao')->group(function(){
         // consultas
         Route::get('/consulta/usuario', [ConsultasController::class,'Usuarios']);
         Route::get('/consulta/maquina', [ConsultasController::class,'Maquinas']);
-        Route::get('/servicos', [ServicoController::class, 'Consultar']);
+        Route::get('/consulta/servico', [ConsultasController::class,'Servicos']);
 
+        // edições feitas nas consultas
         Route::delete('/delete/{tabela}', [DeleteController::class,'Delete'])->name('delete');
         Route::put('/edit/{tabela}/{id}', [EditarController::class,'Editar'])->name('edit.registro');
+        Route::post('/edit/{tabela}/{id}', [EditarController::class,'Editar'])->name('edit.registro');
         
     });
 
