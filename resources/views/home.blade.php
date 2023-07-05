@@ -21,5 +21,11 @@
         <p>Bem vindo a home page do site!!!</p>
         
     </div>
+
+    <div class="footer-informacoes">
+        <footer>
+            alguma coisa aqui
+        </footer>
+    </div>
 @endsection
  

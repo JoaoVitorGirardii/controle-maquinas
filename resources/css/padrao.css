@@ -66,3 +66,8 @@ body{
 .icon-msg{
     margin-right: 1em;
 }
+
+.footer-informacoes{
+    color: var(--fonte-cor-secundaria);
+    /* colocar para o footer ficar no final da pagina */
+}
