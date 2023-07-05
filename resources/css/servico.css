@@ -55,25 +55,26 @@
 
 .titulo-servico{
     color: var(--fonte-cor-secundaria);
+    width: 13em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 1em;
 }
 
 .status-servico-Cadastrado{
-    margin-top: 0.5em;
     color: orange;
 }
 
 .status-servico-Iniciado{
-    margin-top: 0.5em;
     color: greenyellow;
 }
 
 .status-servico-Finalizado{
-    margin-top: 0.5em;
     color: gold;
 }
 
 .status-servico-Parado{
-    margin-top: 0.5em;
     color: red;
 }
 
@@ -95,4 +96,8 @@
 
 .span-info{
     font-weight: 900;
+}
+
+.div-informacoes{
+    display: flex;
 }

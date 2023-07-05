@@ -97,11 +97,13 @@ th:last-child {
     background-color: white;
     border-radius: 1em;
     cursor: pointer;
+    height: 0.5em;
+    width: 0.5em;
 }
 
 /* Estilo do botão de rolagem quando estiver sendo arrastado */
 ::-webkit-scrollbar-thumb {
-    background-color: goldenrod;
+    background-color: #5555559f;
     border-radius: 1em;
 }
 

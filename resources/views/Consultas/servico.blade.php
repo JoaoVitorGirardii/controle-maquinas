@@ -40,7 +40,7 @@
                     <div class="accordion-item-personalizado mt-1">
                         <h2 class="accordion-header-personalizado">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$item->id}}" aria-expanded="false" aria-controls="collapse{{$item->id}}">
-                                <div>
+                                <div class="div-informacoes">
                                     <div class="titulo-servico">
                                         {{$item->id}} - {{$item->cliente}}
                                     </div>
