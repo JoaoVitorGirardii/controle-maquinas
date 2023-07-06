@@ -84,6 +84,12 @@
     width: 10em;
 }
 
+.input-status-servico-pesquisa{
+    background-color: var(--fundo-secundario);
+    color: var(--fonte-cor-secundaria);
+    width: 12em;
+}
+
 .div-selecionar-status{
     display: flex;
     flex-direction: column;

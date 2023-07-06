@@ -64,6 +64,7 @@
                         <li><a class="dropdown-item a-dropdown-navbar" href="{{ url('/cadastro/usuario') }}">Usuário</a></li>
                         <li><a class="dropdown-item a-dropdown-navbar" href="{{ url('/cadastro/maquina') }}">Máquina</a></li>
                         <li><a class="dropdown-item a-dropdown-navbar" href="{{ url('/cadastro/servico') }}">Serviços</a></li>
+                        <li><a class="dropdown-item a-dropdown-navbar disabled" href="{{ url('/cadastro/manutencao') }}">Manutenções</a></li>
                     </ul>
                 </div>
             @endif
@@ -79,7 +80,7 @@
             </div>   
 
             <a href="{{ url('/consulta/servico') }}" class="nav-link-navbar">Serviços</a>
-            <a href="#" class="nav-link-navbar">Manutenções</a>   
+            <a href="{{ url('/consulta/manutencao') }}" class="nav-link-navbar">Manutenções</a>   
             <a href="#" class="nav-link-navbar">Relatórios</a>
         </div>
         <div class="col-4 alinhamento-usuario-logado">

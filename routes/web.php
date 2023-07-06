@@ -57,6 +57,7 @@ Route::middleware('padrao')->group(function(){
         Route::get('/consulta/usuario', [ConsultasController::class,'Usuarios']);
         Route::get('/consulta/maquina', [ConsultasController::class,'Maquinas']);
         Route::get('/consulta/servico', [ConsultasController::class,'Servicos']);
+        Route::get('/consulta/manutencao', [ConsultasController::class,'Manutencao']);
 
         // edições feitas nas consultas
         Route::delete('/delete/{tabela}', [DeleteController::class,'Delete'])->name('delete');

@@ -10,11 +10,17 @@ class TbServico extends Model
     use HasFactory;
     protected $table = 'tbservico';
 
-    public function GetServico($id = null){
+    
+    public function GetServico($id = null, $status_id = null){
+
+        $camposPesquisa = ['id', 'descricao', 'tipo', 'status_id', 'cliente', 'local_servico', 'numero', 'data_inicio', 'data_fim', 'funcionario_id'];
+
         if($id != null){
-            return $this->select(['id', 'descricao', 'tipo', 'status_id', 'cliente', 'local_servico', 'numero', 'data_inicio', 'data_fim', 'funcionario_id'])->where('id', '=', $id)->get();
+            return $this->select($camposPesquisa)->where('id', '=', $id)->get();
+        }elseif ($status_id != null){
+            return $this->select($camposPesquisa)->where('status_id', '=', $status_id)->get();
         }else{
-            return $this->select(['id', 'descricao', 'tipo', 'status_id', 'cliente', 'local_servico', 'numero', 'data_inicio', 'data_fim', 'funcionario_id'])->orderBy('id')->get();
+            return $this->select($camposPesquisa)->orderBy('id')->get();
         }
     }
 

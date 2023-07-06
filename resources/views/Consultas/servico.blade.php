@@ -30,7 +30,29 @@
 
         </div>
          
-        <h3 class="titulo-consultas">Serviços</h3>
+        <div class="row">
+            <div class="col-9">
+                <h3 class="titulo-consultas">Serviços</h3>
+            </div>
+            <div class="col-3">
+                <form action=" {{ url('/consulta/servico')}} " class="d-flex" role="search">
+                    <select class="form-select input-status-servico-pesquisa me-2" type="search" aria-label="Search" name="search_status">
+                                                
+                        <option value="-1" selected>Pesquisar status</option>
+                    
+                        @foreach ($status_serv as $status)
+                            
+                            <option value={{$status->id}}> {{$status->tipo}} </option>
+                            
+                        @endforeach            
+                        
+                        <option value="-1">Todos</option>
+
+                    </select>
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
 
         @if (!$servico->isEmpty())
             <div class="accordion" id="accordionServicos">
@@ -74,7 +96,7 @@
                                                 @csrf 
                                                 @method('PUT')
 
-                                                <select class="form-select input-status-servico" id="Input-status_id" name="status_id">
+                                                <select class="form-select input-status-servico me-2" id="Input-status_id" name="status_id">
                                                 
                                                     <option value="-1" selected>Selecione...</option>
                                                 
