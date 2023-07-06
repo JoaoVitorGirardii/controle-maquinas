@@ -14,13 +14,19 @@
     font-family: 'Montserrat', sans-serif !important;
 }
 
-html{
+html,body{
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fundo-primario);
 }
 
-body{
+/* body{
     height: 100%; 
-    background-color: var(--fundo-primario);
+} */
+
+.conteudo-pagina{
+    flex: 1;
 }
 
 .btns-opcoes-form{
@@ -69,5 +75,26 @@ body{
 
 .footer-informacoes{
     color: var(--fonte-cor-secundaria);
-    /* colocar para o footer ficar no final da pagina */
+    height: 2.2em;
+    background-color: var(--fundo-secundario);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.informacoes{
+    text-align: center;
+    width: 100%;
+}
+
+.informacoes-nome-marca{
+    font-size: 1em ;
+}
+
+.informacoes-versao, .informacoes-desenvolvimento{
+    font-size: 0.8em ;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }

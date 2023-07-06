@@ -23,9 +23,26 @@
 </head>
 <body>
     {{-- conteudo da pagina --}}
-    @yield('conteudo')
+    <div class="conteudo-pagina">
+        @yield('conteudo')
+    </div>
 
     @yield('scrypts')
     {{-- <script src="{{url('js/contents.js')}}"></script>    --}}
 </body>
+<footer>
+    {{-- Padrão em todas as paginas --}}
+    <div class="footer-informacoes">
+        <div class="row informacoes">
+            <div class="col-4 informacoes-desenvolvimento">Desenvolvido por: João Vitor Girardi</div>
+            <div class="col-4 informacoes-nome-marca">MaqControl &reg;</div>
+            {{-- controle de versão X.YYY.ZZZ --}}
+            {{-- X = versão do sistema caso ele tenha alguma mudança de layout muito grandes mudase a versão X --}}
+            {{-- YYY = melhorias que ocorrem durante a ultilização do sistema caso seja criada alguma coisa nova por exemplo uma nova tela de consulta para funcionarios acessar --}}
+            {{-- ZZZ = numero da verão do banco de dados caso seja adicionado mais alguma migration se altera a versão ZZZ --}}
+            {{-- caso o ZZZ ou YYY passem de 999 se adiciona +1 ao X --}}
+            <div class="col-4 informacoes-versao">v1.001.001</div>
+        </div>
+    </div>
+</footer>
 </html>

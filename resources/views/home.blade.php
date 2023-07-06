@@ -9,12 +9,13 @@
 @endsection
 
 @section('conteudo')
+
     {{-- incluindo a navbar --}}
     @include('Layouts.navbar')
 
-    
     <div class="container container-pricipal mt-3">
-        <p>Tipo de usuário: @if (isset($tipo_usuario))
+        <p>Tipo de usuário: 
+        @if (isset($tipo_usuario))
             {{$tipo_usuario}}
         @endif 
         </p>
@@ -22,10 +23,5 @@
         
     </div>
 
-    <div class="footer-informacoes">
-        <footer>
-            alguma coisa aqui
-        </footer>
-    </div>
 @endsection
- 
+      
