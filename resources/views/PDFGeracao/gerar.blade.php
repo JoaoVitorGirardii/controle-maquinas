@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Relatório de Teste</title>
+    <title>Relatório</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-    <h1>Relatório de Funcionários</h1>
+    <h1>Relatório</h1>
     <div class="divider"></div>
     
     <div class="field">
