@@ -7,6 +7,7 @@ use App\Http\controllers\DeleteController;
 use App\Http\controllers\EditarController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PDFController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,10 @@ Route::middleware('padrao')->group(function(){
         Route::get('/consulta/maquina', [ConsultasController::class,'Maquinas']);
         Route::get('/consulta/servico', [ConsultasController::class,'Servicos']);
         Route::get('/consulta/manutencao', [ConsultasController::class,'Manutencao']);
+
+        // pdf
+
+        Route::get('/PDFGeracao/gerar', [PDFController::class,'GerarPDF']);
 
         // edições feitas nas consultas
         Route::delete('/delete/{tabela}', [DeleteController::class,'Delete'])->name('delete');

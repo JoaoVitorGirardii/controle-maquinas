@@ -81,7 +81,7 @@
 
             <a href="{{ url('/consulta/servico') }}" class="nav-link-navbar">Serviços</a>
             <a href="{{ url('/consulta/manutencao') }}" class="nav-link-navbar">Manutenções</a>   
-            <a href="#" class="nav-link-navbar">Relatórios</a>
+            <a href="{{ url('/PDFGeracao/gerar') }}" target="_blank" class="nav-link-navbar">Relatórios</a>
         </div>
         <div class="col-4 alinhamento-usuario-logado">
             <div>
